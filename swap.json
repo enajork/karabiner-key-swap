@@ -1,0 +1,39 @@
+{
+    "description": "Windows RDC key swap (swap alt and command when using RDC)",
+    "manipulators": [
+        {
+            "type": "basic",
+            "from": {
+                "key_code": "left_alt"
+            },
+            "to": [
+                {
+                    "key_code": "left_command"
+                }
+            ],
+            "conditions": [
+                {
+                    "type": "frontmost_application_if",
+                    "bundle_identifiers": ["^com\\.microsoft\\.rdc\\.macos$"]
+                }
+            ]
+        },
+        {
+            "type": "basic",
+            "from": {
+                "key_code": "left_command"
+            },
+            "to": [
+                {
+                    "key_code": "left_alt"
+                }
+            ],
+            "conditions": [
+                {
+                    "type": "frontmost_application_if",
+                    "bundle_identifiers": ["^com\\.microsoft\\.rdc\\.macos$"] 
+                }
+            ]
+        }
+      ]
+}
